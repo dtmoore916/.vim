@@ -63,6 +63,17 @@ let g:airline#extensions#tabline#fnamemod = ':t' " Just show the filename (no pa
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 
+" Rainbow paretheses always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Indent-guides configuration
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+
 "Training....
 noremap <Up> <NOP>
 noremap <Down> <NOP>
