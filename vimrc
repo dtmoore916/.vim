@@ -62,6 +62,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' " Just show the filename (no path) in the tab
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 1
 
 " Rainbow paretheses always on
 au VimEnter * RainbowParenthesesToggle
@@ -71,8 +73,8 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Indent-guides configuration
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
+"let g:indent_guides_start_level = 1
+"let g:indent_guides_guide_size = 1
 
 "Training....
 noremap <Up> <NOP>
