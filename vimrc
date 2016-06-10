@@ -86,7 +86,12 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
 "set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h11
-set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
+if has('win32')
+elseif has('mac')
+    set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
+elseif has('unix')
+    set guifont=Roboto\ Mono\ Light\ for\ Powerline\ 7
+endif
 
 " Rainbow paretheses always on
 au VimEnter * RainbowParenthesesToggle
