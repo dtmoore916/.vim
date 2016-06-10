@@ -38,13 +38,8 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-"""""""""Testing these out...REMOVE THESE?
-"""""""""filetype indent on
-"""""""""set ai "Auto indent
-
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
-":set nolist
 
 set noswapfile
 
@@ -52,18 +47,46 @@ set noswapfile
 
 "** Nerdtree Settings **
 map <C-n> :NERDTreeTabsToggle<CR>
-autocmd VimEnter * NERDTree   "Open nerdtree by default
-autocmd VimEnter * wincmd p   "Move cursor off nerdtree into the buffer window
+if has("gui_running")
+    autocmd VimEnter * NERDTree   "Open nerdtree by default
+    autocmd VimEnter * wincmd p   "Move cursor off nerdtree into the buffer window
+endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  " exit if nerdtree is the last window
 
 "** vim-airline settings **
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' " Just show the filename (no path) in the tab
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+"set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h11
+set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 
 " Rainbow paretheses always on
 au VimEnter * RainbowParenthesesToggle
@@ -73,8 +96,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Indent-guides configuration
 let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_start_level = 1
-"let g:indent_guides_guide_size = 1
 
 "Training....
 noremap <Up> <NOP>
@@ -96,11 +117,8 @@ nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 
 "
-"  Notes
+"Notes:
 "
 "Next time dos files are not working try this:
 "http://stackoverflow.com/questions/3852868/how-to-make-vim-show-m-and-substitute-it
 "
-"Turn off tabs!!!
-"    set indentexpr=''
-

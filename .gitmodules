@@ -34,3 +34,6 @@
 [submodule "bundle/vim-syntax-extra"]
 	path = bundle/vim-syntax-extra
 	url = https://github.com/justinmk/vim-syntax-extra.git
+[submodule "bundle/fonts"]
+	path = bundle/fonts
+	url = https://github.com/powerline/fonts.git
