@@ -22,6 +22,8 @@ set softtabstop=4       " number of spaces in tab when editing
 
 "set expandtab          " tabs are spaces
 
+set autoindent
+
 "set relativenumber      " enable relative line numbers
 set number              " show line numbers
 
@@ -105,10 +107,10 @@ au Syntax * RainbowParenthesesLoadBraces
 "let g:indent_guides_enable_on_vim_startup = 1
 
 "Training....
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
 
 " Tab navigation: Alternatively use
 nnoremap tl :tabnext<CR>
@@ -122,6 +124,14 @@ nnoremap <leader>t :!ctags -R --exclude=.git -f .tags .<CR>
 nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
+"Folding
+set shiftwidth=2
+set foldlevel=2
+set foldmethod=indent
+set foldenable
+set nofoldenable
+:nnoremap <F10> zi
+:nnoremap <F9> zA
 
 "
 "Notes:
